@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris 3D Plot</title>
+    <!-- Plotly.jsを利用するためのCDNを追加 -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>アイリスデータセットの3Dプロット</h1>
+    <div id="plotly-div" style="width: 100%; height: 600px;"></div>
+    <script>
+        var trace1 = {
+            x: [5.1, 4.9, 4.7, 4.6, 5.0],
+            y: [3.5, 3.0, 3.2, 3.1, 3.6],
+            z: [1.4, 1.4, 1.3, 1.5, 1.4],
+            mode: 'markers',
+            marker: {size: 12, color: 'red', symbol: 'circle'},
+            type: 'scatter3d',
+            name: 'Setosa'
+        };
+
+        var trace2 = {
+            x: [7.0, 6.4, 6.9, 5.5, 6.5],
+            y: [3.2, 3.2, 3.1, 2.3, 2.8],
+            z: [4.7, 4.5, 4.9, 4.0, 4.6],
+            mode: 'markers',
+            marker: {size: 12, color: 'green', symbol: 'square'},
+            type: 'scatter3d',
+            name: 'Versicolor'
+        };
+
+        var trace3 = {
+            x: [6.3, 6.5, 7.6, 4.9, 7.3],
+            y: [3.3, 2.8, 3.0, 2.5, 3.3],
+            z: [6.0, 5.8, 6.6, 4.5, 6.3],
+            mode: 'markers',
+            marker: {size: 12, color: 'blue', symbol: 'diamond'},
+            type: 'scatter3d',
+            name: 'Virginica'
+        };
+
+        var data = [trace1, trace2, trace3];
+
+        var layout = {
+            title: 'Iris Dataset 3D Plot',
+            scene: {
+                xaxis: {title: 'Sepal Length'},
+                yaxis: {title: 'Sepal Width'},
+                zaxis: {title: 'Petal Length'}
+            }
+        };
+
+        Plotly.newPlot('plotly-div', data, layout);
+    </script>
+</body>
+</html>
